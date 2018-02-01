@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- The list of the quizz -->
+    <bean id="cmmquizz" class="devoir2.question1.CMMQuizz"/>
+    <bean id="umlquizz" class="devoir2.question1.UMLQuizz"/>
+
+    <bean id="quizzmaster" class="devoir2.question1.QuizzMasterServiceV1">
+        <constructor-arg ref="cmmquizz"/>
+    </bean>
+</beans>
