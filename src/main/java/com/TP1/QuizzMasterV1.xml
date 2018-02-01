@@ -4,10 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- The list of the quizz -->
-    <bean id="cmmquizz" class="devoir2.question1.CMMQuizz"/>
-    <bean id="umlquizz" class="devoir2.question1.UMLQuizz"/>
+    <bean id="cmmquizz" class="com.TP1.CMMQuizz"/>
+    <bean id="umlquizz" class="com.TP1.UMLQuizz"/>
 
-    <bean id="quizzmaster" class="devoir2.question1.QuizzMasterServiceV1">
+    <bean id="quizzmaster" class="com.TP1.QuizzMasterServiceV1">
         <constructor-arg ref="cmmquizz"/>
     </bean>
 </beans>

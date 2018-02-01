@@ -7,9 +7,6 @@ import java.util.Scanner;
 
 public class QuizProgram {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
         System.out.println("Choisissez une option : ");
@@ -34,13 +31,13 @@ public class QuizProgram {
                     break;
                 case 2:
                     // Version avec injection via constructeur :
-                    ApplicationContext context1 = new ClassPathXmlApplicationContext("devoir2/question1/QuizzMasterV1.xml");
+                    ApplicationContext context1 = new ClassPathXmlApplicationContext("com.TP1.QuizzMasterV1.xml");
                     context1.getBean("quizzmaster");
                     cont = false;
                     break;
                 case 3:
                     // Version avec injection via setter :
-                    ApplicationContext context2 = new ClassPathXmlApplicationContext("devoir2/question1/QuizzMasterV2.xml");
+                    ApplicationContext context2 = new ClassPathXmlApplicationContext("com/TP1/QuizzMasterV2.xml");
                     context2.getBean("quizzmaster");
                     cont = false;
                     break;
