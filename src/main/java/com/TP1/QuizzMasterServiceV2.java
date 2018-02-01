@@ -10,14 +10,14 @@ public class QuizzMasterServiceV2 {
 
 	private JFrame ecran;
 	private JRadioButton [] lesBoutons;
-	private QuizzMaster quizMaster;
+	private QuizzMaster quizzMaster;
 
 
 	private void init() {
 		this.ecran = new JFrame();
 		lesBoutons = new JRadioButton [4];
 		ecran.setSize( 450, 200 );
-		this.ecran.setTitle(quizMaster.getType());
+		this.ecran.setTitle(quizzMaster.getType());
 
 		// Fermeture de la fenètre
 		ecran.addWindowListener( new WindowAdapter() {
@@ -32,7 +32,7 @@ public class QuizzMasterServiceV2 {
 		ActionListener listener = e -> {
 			AbstractButton aButton = (AbstractButton) e.getSource();
 			String message=aButton.getText();
-			if(message.equals(quizMaster.getChoix(quizMaster.getReponse())))
+			if(message.equals(quizzMaster.getChoix(quizzMaster.getReponse())))
 				JOptionPane.showMessageDialog( ecran, "bonne réponse" );
 			else
 				JOptionPane.showMessageDialog( ecran, "mauvaise réponse" );
@@ -40,14 +40,14 @@ public class QuizzMasterServiceV2 {
 
 		JPanel panneauQuestion= new JPanel( new FlowLayout( FlowLayout.LEADING ) );
 		panneauQuestion.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder()));
-		JLabel monlabel=new JLabel(quizMaster.getQuestion());
+		JLabel monlabel=new JLabel(quizzMaster.getQuestion());
 		panneauQuestion.add(monlabel);
 		panneauCentral.add( panneauQuestion, BorderLayout.NORTH );
 		JPanel panneauChoix = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
 		ButtonGroup groupe = new ButtonGroup ();
 		for(int i=0; i<4; i++)
 		{
-			lesBoutons[i] = new JRadioButton (quizMaster.getChoix(i));
+			lesBoutons[i] = new JRadioButton (quizzMaster.getChoix(i));
 			groupe.add(lesBoutons[i]);
 			panneauChoix.add(lesBoutons[i]);
 			lesBoutons[i].addActionListener(listener);
@@ -55,8 +55,8 @@ public class QuizzMasterServiceV2 {
 		panneauCentral.add( panneauChoix, BorderLayout.CENTER);
 	}
 
-	public void setQuizMaster(QuizzMaster quizMaster) {
-	    this.quizMaster = quizMaster;
+	public void setquizzMaster(QuizzMaster quizzMaster) {
+	    this.quizzMaster = quizzMaster;
 	    init();
     }
 
