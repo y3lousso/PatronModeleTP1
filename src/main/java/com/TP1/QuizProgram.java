@@ -27,18 +27,19 @@ public class QuizProgram {
                 case 1:
                     // Version original :
                     QuizzMasterService quizMasterService = new QuizzMasterService();
+                    quizMasterService.show();
                     cont = false;
                     break;
                 case 2:
                     // Version avec injection via constructeur :
-                    ApplicationContext context1 = new ClassPathXmlApplicationContext("com.TP1.QuizzMasterV1.xml");
-                    context1.getBean("quizzmaster");
+                    ApplicationContext context1 = new ClassPathXmlApplicationContext("QuizzBeans.xml");
+                    ((QuizzMasterServiceV1) context1.getBean("quizzMasterV1")).show();
                     cont = false;
                     break;
                 case 3:
                     // Version avec injection via setter :
-                    ApplicationContext context2 = new ClassPathXmlApplicationContext("com/TP1/QuizzMasterV2.xml");
-                    context2.getBean("quizzmaster");
+                    ApplicationContext context2 = new ClassPathXmlApplicationContext("QuizzBeans.xml");
+                    ((QuizzMasterServiceV2) context2.getBean("quizzMasterV2")).show();
                     cont = false;
                     break;
                 case 4:

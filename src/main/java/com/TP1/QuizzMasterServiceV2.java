@@ -53,13 +53,16 @@ public class QuizzMasterServiceV2 {
 			lesBoutons[i].addActionListener(listener);
 		}
 		panneauCentral.add( panneauChoix, BorderLayout.CENTER);
-		ecran.setVisible( true );
 	}
 
 	public void setQuizMaster(QuizzMaster quizMaster) {
 	    this.quizMaster = quizMaster;
 	    init();
     }
+
+	public void show() {
+		ecran.setVisible( true );
+	}
 
 	private void terminer() {
 

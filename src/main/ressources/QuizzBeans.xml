@@ -7,7 +7,13 @@
     <bean id="cmmquizz" class="com.TP1.CMMQuizz"/>
     <bean id="umlquizz" class="com.TP1.UMLQuizz"/>
 
-    <bean id="quizzmaster" class="com.TP1.QuizzMasterServiceV1">
-        <constructor-arg ref="cmmquizz"/>
+    <bean id="quizzMasterV1" class="com.TP1.QuizzMasterServiceV1">
+        <!-- Change the ref to select the current test to show -->
+        <constructor-arg ref="umlquizz"/>
+    </bean>
+
+    <bean id="quizzMasterV2" class="com.TP1.QuizzMasterServiceV2">
+        <!-- Change the ref to select the current test to show -->
+        <property name="quizMaster" ref="cmmquizz"/>
     </bean>
 </beans>

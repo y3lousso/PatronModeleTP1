@@ -50,6 +50,9 @@ public class QuizzMasterService {
 			lesBoutons[i].addActionListener(listener);
 		}
 		panneauCentral.add( panneauChoix, BorderLayout.CENTER);
+	}
+
+	public void show() {
 		ecran.setVisible( true );
 	}
 
