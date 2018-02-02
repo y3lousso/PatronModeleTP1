@@ -11,9 +11,9 @@
         <!-- Change the ref to select the current test to show -->
         <constructor-arg ref="umlquizz"/>
     </bean>
-
+    
     <bean id="quizzMasterV2" class="com.TP1.QuizzMasterServiceV2">
         <!-- Change the ref to select the current test to show -->
-        <property name="quizMaster" ref="cmmquizz"/>
+        <property name="quizzMaster" ref="cmmquizz"/>
     </bean>
 </beans>
