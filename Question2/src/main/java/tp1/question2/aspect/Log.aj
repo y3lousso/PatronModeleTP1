@@ -1,17 +1,21 @@
 package tp1.question2.aspect;
 
+import org.aspectj.lang.reflect.MethodSignature;
+
 public aspect Log {
 
-	pointcut pointsATracer() : execution(* *.*(..)) && !within(Log);
+	pointcut FunctionExecutionOrder() : execution(public void *.*(*)) && !within(Log);
 	
-	before(): pointsATracer() 
+	before(): FunctionExecutionOrder() 
 	{ 
-		System.out.println("Before");  	
+		String functionName = thisJoinPoint.getSignature().getName();
+		System.out.println("Entering :" + functionName);  	
 	}
 	
-	after(): pointsATracer() 
+	after(): FunctionExecutionOrder() 
 	{ 
-		System.out.println("After"); 
+		String functionName = thisJoinPoint.getSignature().getName();
+		System.out.println("Exiting :"+ functionName); 
 	} 
 	
 
