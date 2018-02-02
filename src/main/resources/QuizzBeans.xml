@@ -4,15 +4,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- The list of the quizz -->
-    <bean id="cmmquizz" class="com.TP1.CMMQuizz"/>
-    <bean id="umlquizz" class="com.TP1.UMLQuizz"/>
+    <bean id="cmmquizz" class="com.TP1.quizz.CMMQuizz"/>
+    <bean id="umlquizz" class="com.TP1.quizz.UMLQuizz"/>
 
-    <bean id="quizzMasterV1" class="com.TP1.QuizzMasterServiceV1">
+    <bean id="quizzMasterV1" class="com.TP1.quizz.QuizzMasterServiceV1">
         <!-- Change the ref to select the current test to show -->
         <constructor-arg ref="umlquizz"/>
     </bean>
     
-    <bean id="quizzMasterV2" class="com.TP1.QuizzMasterServiceV2">
+    <bean id="quizzMasterV2" class="com.TP1.quizz.QuizzMasterServiceV2">
         <!-- Change the ref to select the current test to show -->
         <property name="quizzMaster" ref="cmmquizz"/>
     </bean>

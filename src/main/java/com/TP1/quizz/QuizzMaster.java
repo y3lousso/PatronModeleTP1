@@ -1,4 +1,4 @@
-package com.TP1;
+package com.TP1.quizz;
 
 public interface QuizzMaster {
 	public String getQuestion ();

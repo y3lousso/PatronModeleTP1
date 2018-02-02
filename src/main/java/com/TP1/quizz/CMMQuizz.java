@@ -1,4 +1,4 @@
-package com.TP1;
+package com.TP1.quizz;
 
 public class CMMQuizz implements QuizzMaster {
 	private String question;

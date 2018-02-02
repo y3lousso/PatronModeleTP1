@@ -1,4 +1,4 @@
-package com.TP1;
+package com.TP1.quizz;
 
 public class UMLQuizz implements QuizzMaster {
 	private String type;

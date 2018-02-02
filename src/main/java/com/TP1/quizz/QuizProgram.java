@@ -1,4 +1,4 @@
-package com.TP1;
+package com.TP1.quizz;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
