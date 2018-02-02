@@ -1,13 +1,16 @@
 package tp1.question2;
 
-/**
- * Hello world!
- *
- */
+
 public class MainQuestion2 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Bank b1 = new Bank();
+        Client c1 = new Client();
+        
+        b1.OpenNewAccountForClient(c1);
+        
+        b1.ChangeInterest(1.5f);
+               
     }
 }
