@@ -1,22 +1,51 @@
 package tp1.question2;
 
-public class Account {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Account implements Publisher {
 	
-	private Bank bank;
-	private Client client;
+	// Publisher variables
+	private List<Subscriber> subscribers;
+	private String message;
+	private boolean changed;
+	private final Object MUTEX= new Object();
+	
+	// Account variables
 	private float interest;
 	
-	public Account(Bank b, Client c,float i) {
-		this.bank = b;
-		this.client=c;
+	public Account(float i) {
+		this.subscribers=new ArrayList();
 		this.interest=i;
 	}
-	
-	public void SetInterest(float i){this.interest=i;}	
+		
+	public void SetInterest(float i)
+	{
+		this.interest=i;
+		//publish clientNotificationEvent
+		NotifySubscribers();
+		
+	}		
+
 	public float GetInterest(){return this.interest;}
 	
-	public Client GetClient(){return this.client;}
+	@Override
+	public void Register(Subscriber obj) {
+		if(obj == null) throw new NullPointerException("Null subscriber");
+			if(!subscribers.contains(obj)) subscribers.add(obj);
+	}
 
-	public Bank GetBank(){return this.bank;}
+	@Override
+	public void Unregister(Subscriber obj) {
+		subscribers.remove(obj);
+	}
+
+	@Override
+	public void NotifySubscribers() {
+		for (Subscriber obj : subscribers) {
+			obj.Update();
+		}
+
+	}
 	
 }

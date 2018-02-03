@@ -1,22 +1,27 @@
 package tp1.question2;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Client {
+public class Client implements Subscriber{
 
 	private String name;
-	private List<Account> _accounts;
+	private Publisher publisher;
 	
 	public Client(String n)
 	{
-		_accounts = new ArrayList<Account>();
 		this.name=n;		
 	}
-	
-	public void AddAccount(Account account) 
-	{		
-		_accounts.add(account);
+		
+	public void OnAccountInterestChange() {
+		System.out.println("Client " + name + " has received the notifcation.");
+	}
+
+	@Override
+	public void Update() {
+		OnAccountInterestChange();
+	}
+
+	@Override
+	public void SetPublisher(Publisher publ) {
+		this.publisher=publ;
 	}
 	
 }
