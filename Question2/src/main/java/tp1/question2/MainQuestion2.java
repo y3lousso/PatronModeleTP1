@@ -6,7 +6,7 @@ public class MainQuestion2
     public static void main( String[] args )
     {
         Bank b1 = new Bank();
-        Client c1 = new Client("Jean");
+        Client c1 = new Client("Jean-Marie Lepen");
         
         b1.OpenNewAccountForClient(c1);
         
