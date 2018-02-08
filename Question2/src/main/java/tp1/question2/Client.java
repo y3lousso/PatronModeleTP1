@@ -1,27 +1,38 @@
 package tp1.question2;
 
-public class Client implements Subscriber{
+public class Client implements Observer{
 
+	private Subject subject;
 	private String name;
-	private Publisher publisher;
 	
 	public Client(String n)
 	{
 		this.name=n;		
 	}
 		
-	public void OnAccountInterestChange() {
-		System.out.println("Client " + name + " has received the notifcation.");
-	}
-
 	@Override
-	public void Update() {
+	public void Update() 
+	{
 		OnAccountInterestChange();
 	}
-
-	@Override
-	public void SetPublisher(Publisher publ) {
-		this.publisher=publ;
+	
+	public void OnAccountInterestChange() 
+	{
+		System.out.println("Client " + name + " has received the notification.");
 	}
 	
+	public void Subscribe(Subject subj) 
+	{
+		subject = subj;
+	}
+	
+	public void Unsubscribe() 
+	{
+		subject = null;
+	}
+	
+	public Subject GetSubject() 
+	{		
+	return subject;
+	}	
 }

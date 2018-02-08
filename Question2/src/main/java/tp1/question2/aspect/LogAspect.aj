@@ -1,8 +1,8 @@
 package tp1.question2.aspect;
 
-public aspect Log {
+public aspect LogAspect {
 
-	pointcut FunctionExecutionOrder() : execution(public void *.*(*)) && !within(Log);
+	pointcut FunctionExecutionOrder() : execution(public void *.*(*)) && !within(LogAspect);
 	
 	before(): FunctionExecutionOrder() 
 	{ 
